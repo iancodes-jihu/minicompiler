@@ -1,8 +1,8 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -o2
+CFLAGS = -Wall -Wextra -O2 #its capitalized O not o
 
 SRC_DIR = src
-BIN_DIR = BIN_DIR
+BIN_DIR = bin #changing BIN_DIR to bin so the eror in run test.sh can be fixed
 
 VM_SRC = $(SRC_DIR)/vm.c
 COMPILER_SRC = $(SRC_DIR)/compiler.c
@@ -20,7 +20,7 @@ dirs:
 $(VM_BIN): $(VM_SRC)
 	$(CC) $(CFLAGS) -o $@ $<
 
-$(COMPILER_BIN) : $(COMPILER_SRC)
+$(COMPILER_BIN): $(COMPILER_SRC)
 	$(CC) $(CFLAGS) -o $@ $<
 
 clean:
